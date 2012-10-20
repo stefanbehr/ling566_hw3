@@ -1,0 +1,202 @@
+\documentclass[12pt]{article}
+\usepackage{qtree}
+\usepackage{parskip}
+\usepackage{avm}
+\usepackage{graphicx}
+\avmfont{\sc}
+\avmvalfont{\rm}
+\avmsortfont{\it}
+\usepackage[paperwidth=16in,paperheight=23in,left=1in,right=1in,top=1in,bottom=1in]{geometry}
+\begin{document}
+
+\pagestyle{empty}
+\newcommand{\gap}{\hspace*{3mm}}
+
+% pequenos lexical entry
+\newcommand{\pequenos}{
+                    \[
+                        \it{word} \\
+                        SYN &   \[
+                                    \it{syn-cat} \\
+                                    HEAD &  \[
+                                                \it{adj} \\
+                                                AGR & \@1   \[
+                                                                \it{agr-cat} \\
+                                                                PER & 3rd \\
+                                                                NUM & pl \\
+                                                                GEND & masc \\
+                                                            \]\\
+                                            \]\\
+                                    VAL &   \[
+                                                \it{val-cat} \\
+                                                MOD & \<    \avml \hfil \@5 N \hfil \\
+                                                                \[
+                                                                    AGR & \@1 \\
+                                                                    INDEX & \it{i} \\
+                                                                \] \avmr \> \\
+                                            \]\\
+                                \]\\
+                        SEM &   \[
+                                    \it{sem-cat} \\
+                                    MODE & none \\
+                                    INDEX & \it{t} \\
+                                    RESTR & \@4 \<  \[
+                                                        RELN & \bf{peque\~nos} \\
+                                                        ARG & \it{i} \\
+                                                    \] \>\\
+                                \]\\
+                    \]
+}
+
+% pinguinos lexical entry
+\newcommand{\pinguinos}{
+                    \@5 \[
+                            \it{word} \\
+                            SYN &   \[
+                                        \it{syn-cat} \\
+                                        HEAD &  \[
+                                                    \it{noun} \\
+                                                    AGR & \@0 \@1   \[
+                                                                       \it{agr-cat} \\
+                                                                        PER & 3rd \\
+                                                                        NUM & pl \\
+                                                                        GEND & masc \\
+                                                                    \]\\
+                                                    CASE & nom \\
+                                                \]\\
+                                        VAL &   \[
+                                                    \it{val-cat} \\
+                                                    SPR & \@2   \<    \avml \hfil \@6 DP_{i} \hfil \\
+                                                                        \[
+                                                                            AGR & \@0 \\
+                                                                            COUNT & + \\
+                                                                        \]
+                                                                    \avmr \> \\
+                                                \]\\
+                                    \]\\
+                            SEM &   \[
+                                        \it{sem-cat} \\
+                                        MODE & ref \\
+                                        INDEX & \it{i} \\
+                                        RESTR & \@3 \<  \[
+                                                            RELN & \bf{ping\"uinos} \\
+                                                            INST & \it{i} \\
+                                                        \] \>\\
+                                    \]\\
+                        \]
+}
+
+% phrase structure for pinguinos pequenos
+\newcommand{\pinguinospequenos}{
+                    \[
+                        \it{phrase} \\
+                        SYN &   \[
+                                    \it{syn-cat} \\
+                                    HEAD &  \[
+                                                \it{noun} \\
+                                                AGR & \@0   \[
+                                                                \it{agr-cat} \\
+                                                                PER & 3rd \\
+                                                                NUM & pl \\
+                                                                GEND & masc \\
+                                                            \]\\
+                                                CASE & nom \\
+                                            \]\\
+                                    VAL &   \[
+                                                \it{val-cat} \\
+                                                SPR & \@2   \<    \avml \hfil \@6 DP_{i} \hfil \\
+                                                                    \[
+                                                                        AGR & \@0 \\
+                                                                        COUNT & + \\
+                                                                    \]
+                                                                \avmr \> \\
+                                            \]\\
+                                \]\\
+                        SEM &   \[
+                                    \it{sem-cat} \\
+                                    MODE & ref \\
+                                    INDEX & \it{i} \\
+                                    RESTR & \@3 $\oplus$ \@4 \\
+                                \]\\
+                    \]
+}
+
+% lexical entry for los
+\newcommand{\los}{
+                    \@6 \[
+                            \it{word} \\
+                            SYN &   \[
+                                        \it{syn-cat} \\
+                                        HEAD &  \[
+                                                    \it{det} \\
+                                                    AGR & \@0   \[
+                                                                    \it{agr-cat} \\
+                                                                    PER & 3rd \\
+                                                                    NUM & pl \\
+                                                                    GEND & masc \\
+                                                                \]\\
+                                                    COUNT & + \\
+                                                \]\\
+                                    \]\\
+                            SEM &   \[
+                                        \it{sem-cat} \\
+                                        MODE & none \\
+                                        INDEX & \it{i} \\
+                                        RESTR & \@7 \<  \[
+                                                            RELN & \bf{los} \\
+                                                            BV & \it{i} \\
+                                                        \] \>\\
+                                    \]\\
+                        \]
+}
+
+% phrase structure for los pinguinos pequenos
+\newcommand{\lospinguinospequenos}{
+                    \[
+                        \it{phrase} \\
+                        SYN &   \[
+                                    \it{syn-cat} \\
+                                    HEAD &  \[
+                                                \it{noun} \\
+                                                AGR &   \[
+                                                            \it{agr-cat} \\
+                                                            PER & 3rd \\
+                                                            NUM & pl \\
+                                                            GEND & masc \\
+                                                        \]\\
+                                                CASE & nom \\
+                                            \]\\
+                                \]\\
+                        SEM &   \[
+                                    \it{sem-cat} \\
+                                    MODE & ref \\
+                                    INDEX & \it{i} \\
+                                    RESTR & \@7 $\oplus$ \@3 $\oplus$ \@4 \\
+                                \]\\
+                    \]
+}
+
+\nopagebreak
+
+\large{\textbf{6.2B Tree for NP \textit{los ping\"uinos peque\~nos}}}\\
+
+\Tree
+[.{ \begin{avm} \lospinguinospequenos \end{avm} }
+    [.{ \begin{avm} \los \end{avm} } 
+        [.{ \it{los} } ] ]
+    [.{ \begin{avm} \pinguinospequenos \end{avm} }
+        [.{ \begin{avm} \pinguinos \end{avm} }
+            [.{ \it{ping\"uinos} } ] ]
+        [.{ \begin{avm} \pequenos \end{avm} }
+            [.{ \it{peque\~no}s } ] ] ] ]
+            
+\begin{tabular}{rl}
+\begin{avm}SHAC:\end{avm} & \begin{avm}\@0\end{avm}\\
+\begin{avm}Valence Principle:\end{avm} & \begin{avm}\@2\end{avm}\\
+\begin{avm}Lexical entry for \textit{peque\~nos}:\end{avm} & \begin{avm}\@1\end{avm}\\
+\begin{avm}Head-Specifier Rule:\end{avm} & \begin{avm}\@6\end{avm}\\
+\begin{avm}Head-Modifier Rule:\end{avm} & \begin{avm}\@5\end{avm}\\
+\begin{avm}For compact phrasal SEM values:\end{avm} & \begin{avm}\@3 \@4 \@7\end{avm}\\
+\end{tabular}
+
+\end{document}
